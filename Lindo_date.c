@@ -32,12 +32,12 @@ int main()
         }
 // CASE 2 DONT HAVE ZODIAC SIGNS YET
     case 2:
-        if (day < 29)
+              if (day < 29)
         {
             printf("February %d, %d", day, year);
             break;
         }
-        else
+        else if (day == 29)
         {
             if (year % 4 == 0)
             {
@@ -49,7 +49,13 @@ int main()
                 printf("%d is not a leap year", year);
                 break;
             }
+              printf("Invalid day: %d", day);
+            break;
         }
+        else{
+        	    printf("Invalid day: %d", day);
+            break;
+		}
 
     case 3:
         if (day <= 21)
