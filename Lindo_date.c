@@ -282,7 +282,7 @@ int main()
 
     default:
     {
-        if (day > 31)
+        if (day > 31 || day < 1)
         {
             printf("Invalid month: %d\nInvalid day: %d\n", month, day);
             break;
