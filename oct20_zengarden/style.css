@@ -1,0 +1,118 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+
+:root {
+	--W: 2866px;
+	/* window width at 67% zoom */
+	--H: 1350px;
+	/* window height at 67% zoom */
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	background-color: #1d1d1d;
+	background-image: radial-gradient(circle at center, #aeadad 0%, #2b2b2b 55%, #000 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+}
+
+body {
+
+	margin: 0;
+	padding: 0;
+	color: #f6f6f6;
+	font: 13px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-image: linear-gradient(to top, #000 0%, transparent 100%),
+		url("https://i.ibb.co/B2DRjgtG/70a8a02b4571946e8b8d9631dfb436cb-removebg-preview.png"),
+		url("https://i.ibb.co/sJbJP7yX/6.png"),
+
+		url("https://i.ibb.co/B2TT5278/4.png"), url("https://i.ibb.co/DfzH2rTk/3.png"), url("https://i.ibb.co/SDbvJKsK/5.png"), url("https://i.ibb.co/2YZccZWQ/9.png"), url("https://i.ibb.co/nsmR4vgM/2.png");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: center bottom, -70px top, right 0 bottom -20px, left 150px top, left 90px bottom, right center, right 10px top 90px, left 700px;
+	background-size: 100% 12vh, auto 20vh, auto 40vh, 700px auto, 180px auto, 750px auto, 200px, 260px;
+	background-attachment: fixed, scroll, scroll, scroll, scroll, scroll, scroll, scroll, scroll;
+	text-align: center;
+
+}
+
+.page-wrapper {
+	margin: 0 auto;
+	width: 974px;
+	height: 2100px;
+	position: relative;
+	background: #191616;
+	padding: 0 10px 0 10px;
+	text-align: left;
+
+
+}
+
+h1 {
+	background-image: url("https://i.ibb.co/HDj8dKW2/fontbolt-2.png");
+	background-position: left;
+	background-repeat: no-repeat;
+	width: 1560px;
+	height: 250px;
+	overflow: hidden;
+	margin: 0px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+h2 {
+	text-align: center;
+}
+
+.summary {
+	text-align: center;
+}
+
+h3 {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	background: repeating-linear-gradient(45deg,
+			#1d1d1d,
+			#1d1d1d 10px,
+			#262626 10px,
+			#262626 20px);
+
+	margin: 20px;
+	font-family: 20px;
+	padding: 20px;
+}
+
+p {
+	margin: 0.9em 0 0.9em 0;
+	padding: 0;
+	line-height: 1.2em;
+}
+
+.preamble p,
+.explanation p,
+.benefits p,
+.requirements p,
+.participation p {
+	text-align: justify;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+footer {
+	text-align: center;
+	font-size: 30px;
+	margin: 20px;
+}
