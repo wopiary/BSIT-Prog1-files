@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 int sq(int squared);
 float temp(float uTemp);
@@ -7,9 +6,11 @@ int sum(int uNum);
 int main()
 {
     int userChoice;
+    printf("====FUNCTIONS MENU====\n[1] Square of a Number\n[2] Vowel or Consonant\n[3] Celsius to Farenheit\n[4] Sum of 1 to n\n[0] Exit\n");
+
     do
     {
-        printf("====FUNCTIONS MENU====\n[1] Square of a Number\n[2] Vowel or Consonant\n[3] Celsius to Farenheit\n[4] Sum of 1 to n\n[0] Exit\nEnter choice: ");
+        printf("Enter choice: ");
         scanf("%d", &userChoice);
         switch (userChoice)
         {
@@ -25,11 +26,11 @@ int main()
             }
             else
             {
-                printf("Invalid\n\n");
+                printf("Invalid input. Not a number.\n\n");
                 while (getchar() != '\n')
                     ;
             }
-            break; // NEEDS FIXING WHEN INPUTTING A NONE INT VALUE
+            break;
         case 2:
             char userChar;
             printf("Enter a character: ");
@@ -46,7 +47,7 @@ int main()
             }
             else
             {
-                printf("%c is not a character.\n\n", userChar);
+                printf("Invalid input. Not a letter.\n\n");
             }
             break;
 
@@ -66,22 +67,37 @@ int main()
                     ;
             }
             break;
-        case 4: // UNFUCKING FINISHED gotta add what happens f input is negative, and add while loop to make the user try again
+        case 4:
 
             int userN;
-            if (scanf("%d", &userN) == 1)
-            {
-                int tot = sum(userN);
-                printf("The sum of numbers from 1 to %d is %d.\n\n", userN, tot);
-            }
-            else
-            {
-                printf("Invalid input. Please enter a valid integer.\n\n");
-                while (getchar() != '\n')
-                    ;
-            }
 
-            break;
+            do
+
+            {
+                printf("Enter n: ");
+
+                if (scanf("%d", &userN) == 1)
+                {
+                    if (userN > 0)
+                    {
+                        int tot = sum(userN);
+                        printf("The sum of numbers from 1 to %d is %d.\n\n", userN, tot);
+                        break;
+                    }
+                    else
+                    {
+                        printf("n must be 1 or greater. Try again.\n");
+                    }
+                }
+
+                else
+                {
+                    printf("Invalid input. Please enter a valid integer.\n\n");
+                    while (getchar() != '\n')
+                        ;
+                }
+            } while (userN != 0);
+
         default:
             break;
         }
