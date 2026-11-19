@@ -5,6 +5,7 @@
 #include <unistd.h>
 int genRan(int &ran);
 int uGuess(int guess, int x);
+int guessProgress(int daguess, int thought);
 int main()
 {
     int userChoice;
@@ -32,27 +33,44 @@ int main()
             printf("Thought done. Guess in 3 tries before the goose \nruns away. What is the number in the goose's head?\n");
             c = genRan(randomNum);
             printf("%d\n", c); // the generated random number from function below
-            for (counter; counter < chances; counter++)
+            for (counter = 0; counter < chances; counter++)
             {
                 scanf("\n%d", &userGuess);
                 uGuess(userGuess, c);
                 int result = uGuess(userGuess, c);
-                switch (result)
+                if (result == 1)
                 {
-                case 1:
-                    printf("\nYou have successfully read the goose's mind.");
+                    printf("You have successfully read the goose's mind!");
                     counter += 5;
-                    break;
-
-                default:
-                    printf("\nYou have %d chance(s) left\n", chances -= 1);
-                    counter--;
-                    break;
                 }
+                else
+                {
+                    guessProgress(userGuess, randomNum);
+                    int verdict = guessProgress(userGuess, randomNum);
+                    switch (verdict)
+                    {
+                    case 1:
+                        printf("Guess is too big, run it back\n");
+                        break;
+                    case 2:
+                        printf("Guess is too small, run it back\n");
+                        break;
+                    }
+                }
+                // switch (result)
+                // {
+                // case 1:
+                //     printf("\nYou have successfully read the goose's mind.");
+                //     counter += 5;
+                //     break;
+
+                // default:
+                //     printf("\nYou have %d chance(s) left\n", chances -= 1);
+                //     counter--;
+                //     break;
+                // }
             }
-
-            printf("\nPlay with goose again?");
-
+            system("cls");
             break;
         case 0:
             break;
@@ -84,5 +102,17 @@ int uGuess(int guess, int x)
     else
     {
         return 0;
+    }
+}
+int guessProgress(int daguess, int thought)
+{
+    if (daguess > thought)
+    {
+        return 1;
+        exit;
+    }
+    else
+    {
+        return 2;
     }
 }
